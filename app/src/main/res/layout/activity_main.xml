@@ -1,76 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF5F8">
+    android:orientation="vertical"
+    android:padding="20dp">
 
+    <!-- Last Period -->
     <TextView
-        android:id="@+id/tvAppName"
+        android:id="@+id/tvLastPeriod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Period Tracker"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#C2185B"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="16dp"/>
+        android:text="Last Period:"
+        android:textSize="18sp" />
 
-    <!-- Cycle Info Block -->
-    <LinearLayout
-        android:id="@+id/blockCycle"
-        android:layout_width="0dp"
+    <!-- Next Period Prediction -->
+    <TextView
+        android:id="@+id/tvNextPeriod"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:background="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/tvAppName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp">
+        android:text="Next Period:"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
 
-        <TextView
-            android:text="Last Period"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
+    <!-- Cycle Status (Regular/Irregular) -->
+    <TextView
+        android:id="@+id/tvCycleStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cycle Status:"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
 
-        <TextView
-            android:id="@+id/tvLastPeriod"
-            android:text="Not set"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <!-- Buttons Block -->
+    <!-- Add Period Button -->
     <Button
         android:id="@+id/btnAddPeriod"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Period"
-        app:layout_constraintTop_toBottomOf="@id/blockCycle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        android:text="Add Period Date"
+        android:layout_marginTop="20dp"/>
 
+    <!-- Calendar Button -->
     <Button
         android:id="@+id/btnCalendar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View Calendar"
-        app:layout_constraintTop_toBottomOf="@id/btnAddPeriod"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        android:layout_marginTop="10dp"/>
 
+    <!-- Articles / Awareness Button -->
     <Button
         android:id="@+id/btnArticles"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Health Articles"
-        app:layout_constraintTop_toBottomOf="@id/btnCalendar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="10dp"/>
+</LinearLayout>
