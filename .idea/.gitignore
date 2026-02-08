@@ -1,3 +1,17 @@
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Build files
+/build
+/app/build
+
+# Local config
+local.properties
+
+# OS files
+.DS_Store
+Thumbs.db
 # Default ignored files
 /shelf/
 /workspace.xml
