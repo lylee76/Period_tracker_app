@@ -50,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
         btnArticles.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, ArticlesActivity.class)));
+
+        Button btnSymptoms = findViewById(R.id.btnSymptoms);
+
+        btnSymptoms.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, AddSymptomActivity.class)));
+
     }
 
     @Override

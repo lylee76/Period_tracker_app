@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PeriodTracker">
         <activity
+            android:name=".AddSymptomActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddPeriodActivity"
             android:exported="false" />
         <activity

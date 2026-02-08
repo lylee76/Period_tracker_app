@@ -29,6 +29,15 @@ public class PeriodDatabaseHelper extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_DATE + " TEXT)";
         db.execSQL(createTable);
+
+        String symptomTable = "CREATE TABLE symptoms (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "date TEXT," +
+                "cramps INTEGER," +
+                "headache INTEGER," +
+                "mood INTEGER)";
+        db.execSQL(symptomTable);
+
     }
 
     @Override
@@ -88,4 +97,17 @@ public class PeriodDatabaseHelper extends SQLiteOpenHelper {
             return null;
         }
     }
+
+    // Insert symptoms
+    public boolean insertSymptom(String date, int cramps, int headache, int mood) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("date", date);
+        cv.put("cramps", cramps);
+        cv.put("headache", headache);
+        cv.put("mood", mood);
+        long result = db.insert("symptoms", null, cv);
+        return result != -1;
+    }
+
 }

@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class AddPeriodActivity extends AppCompatActivity {
 
@@ -56,8 +58,10 @@ public class AddPeriodActivity extends AppCompatActivity {
 
         new DatePickerDialog(this,
                 (view, year, month, dayOfMonth) -> {
-                    // Format: day/month/year
-                    selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
+                    Calendar selectedCalendar = Calendar.getInstance();
+                    selectedCalendar.set(year, month, dayOfMonth);
+                    // Format: yyyy-MM-dd
+                    selectedDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(selectedCalendar.getTime());
                     tvSelectedDate.setText("Selected Date: " + selectedDate);
                 },
                 calendar.get(Calendar.YEAR),

@@ -5,53 +5,63 @@
     android:orientation="vertical"
     android:padding="20dp">
 
-    <!-- Last Period -->
-    <TextView
-        android:id="@+id/tvLastPeriod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last Period:"
-        android:textSize="18sp" />
-
-    <!-- Next Period Prediction -->
-    <TextView
-        android:id="@+id/tvNextPeriod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next Period:"
-        android:textSize="18sp"
-        android:layout_marginTop="8dp"/>
-
-    <!-- Cycle Status (Regular/Irregular) -->
-    <TextView
-        android:id="@+id/tvCycleStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cycle Status:"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"/>
-
-    <!-- Add Period Button -->
-    <Button
-        android:id="@+id/btnAddPeriod"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Period Date"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="match_parent">
 
-    <!-- Calendar Button -->
-    <Button
-        android:id="@+id/btnCalendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View Calendar"
-        android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <!-- Articles / Awareness Button -->
-    <Button
-        android:id="@+id/btnArticles"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Health Articles"
-        android:layout_marginTop="10dp"/>
+            <!-- Cycle Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Cycle Overview"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textDark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvCycleInfo"
+                        android:text="Your cycle info will appear here"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Buttons -->
+            <Button
+                android:id="@+id/btnAddPeriod"
+                android:text="Add Period Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnAddSymptom"
+                android:text="Add Symptoms"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
